@@ -87,7 +87,7 @@ resource "azurerm_subnet" "sn" {
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.0.0/16"]
-  service_endpoints    = ["Microsoft.Sql"]
+  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
 }
 
 resource "azurerm_mssql_virtual_network_rule" "vn_rule" {
