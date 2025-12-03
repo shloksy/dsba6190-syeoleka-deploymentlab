@@ -24,7 +24,7 @@ resource "random_integer" "deployment_id_suffix" {
 // Resource Group
 
 resource "azurerm_resource_group" "rg" {
-  name      = "rg-dsba6190-syeoleka-eastus-dev-${random_integer.deployment_id_suffix.result}"
+  name     = "rg-dsba6190-syeoleka-eastus-dev-${random_integer.deployment_id_suffix.result}"
   location = var.location
 
   tags = local.tags
@@ -74,7 +74,7 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  
+
   tags = local.tags
 }
 
