@@ -90,9 +90,8 @@ resource "azurerm_mssql_virtual_network_rule" "vn_rule" {
   name      = "vnet-rule-dsba6190-syeoleka-dev-${random_integer.deployment_id_suffix.result}"
   server_id = azurerm_mssql_server.server.id
   subnet_id = azurerm_subnet.sn.id
-
-  tags = local.tags
 }
+
 
 
 
