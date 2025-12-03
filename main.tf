@@ -48,8 +48,8 @@ resource "azurerm_mssql_server" "server" {
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   version                      = "12.0"
-  # administrator_login          = "4dm1n157r470r"
-  # administrator_login_password = "4-v3ry-53cr37-p455w0rd"
+  administrator_login          = "4dm1n157r470r"
+  administrator_login_password = "4-v3ry-53cr37-p455w0rd"
 }
 
 resource "azurerm_mssql_database" "db" {
@@ -85,5 +85,6 @@ resource "azurerm_mssql_virtual_network_rule" "vn_rule" {
   server_id = azurerm_mssql_server.server.id
   subnet_id = azurerm_subnet.sn.id
 }
+
 
 
