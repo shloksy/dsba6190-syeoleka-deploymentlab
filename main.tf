@@ -84,8 +84,6 @@ resource "azurerm_subnet" "sn" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.0.0/16"]
   service_endpoints    = ["Microsoft.Sql"]
-  
-tags = local.tags
 }
 
 resource "azurerm_mssql_virtual_network_rule" "vn_rule" {
@@ -95,6 +93,7 @@ resource "azurerm_mssql_virtual_network_rule" "vn_rule" {
 
   tags = local.tags
 }
+
 
 
 
